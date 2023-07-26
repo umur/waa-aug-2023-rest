@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "588363cd-9f7c-4bc2-b645-62a5e374de5a",
+		"name": "WAA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10706477",
+		"_collection_link": "https://orange-escape-757621.postman.co/workspace/e2067df7-efc2-4ffb-893d-9fb1735b44e9/collection/10706477-588363cd-9f7c-4bc2-b645-62a5e374de5a?action=share&creator=10706477&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "W1D2",
+			"item": [
+				{
+					"name": "Courses",
+					"item": [
+						{
+							"name": "get course",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/courses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"courses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "course add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"2\",\r\n    \"name\": \"MWA\",\r\n    \"code\": \"CS-572\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/courses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"courses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update course",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n        \"id\": 1,\r\n        \"name\": \"WAA-1\",\r\n        \"code\": \"CS-545\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/courses/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"courses",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete course",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/courses/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"courses",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Students",
+					"item": [
+						{
+							"name": "get students",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/students",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"students"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add student",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"616049\",\r\n    \"firstName\": \"Phyo\",\r\n    \"lastName\": \"Theingi\",\r\n    \"email\": \"phyo.thein.gi@miu.edu\",\r\n    \"major\": \"Compro\",\r\n    \"courseTaken\": [\"MWA\", \"WAP\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/students",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"students"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update student",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"firstName\": \"Carey\",\r\n        \"lastName\": \"Nyein\",\r\n        \"email\": \"carey.nyein@miu.edu\",\r\n        \"major\": \"Computer Science\",\r\n        \"courseTaken\": [\"MWA\"]\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/students/616049",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"students",
+										"616049"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete student",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/students/616049",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"students",
+										"616049"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get students by major",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/students/major/?major=mba",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"students",
+										"major",
+										""
+									],
+									"query": [
+										{
+											"key": "major",
+											"value": "mba"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get courses by student id",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

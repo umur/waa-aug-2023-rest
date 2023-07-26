@@ -6,7 +6,7 @@ import lab2.model.Course;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Service
+//@Service
 public interface courseService {
 
     Course getCourseById(int id);

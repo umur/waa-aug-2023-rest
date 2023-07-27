@@ -15,12 +15,11 @@ public class CourseRepo {
     }
 
     public void create(Course course) {
-        System.out.println(course.getName());
         courses.putIfAbsent(course.getId(), course);
     }
 
     public Course read(int id){
-        return courses.getOrDefault(id, null);
+        return courses.getOrDefault(id, new Course());
     }
 
     public void update(Course course){

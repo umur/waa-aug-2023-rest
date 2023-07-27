@@ -9,24 +9,21 @@ import java.util.Map;
 @Repository
 public class StudentRepo {
     Map<Integer, Student> students = new HashMap<>();
-
-    public Student get(int id){
-        return students.getOrDefault(id, null);
-    }
-
-    public void save(Student course) {
-        students.putIfAbsent(course.getId(), course);
-    }
-
     public Map<Integer, Student> getAll(){
         return students;
     }
-
+    public void create(Student student) {
+        students.putIfAbsent(student.getId(), student);
+    }
+    public Student read(int id){
+        return students.getOrDefault(id, new Student());
+    }
+    public void update(Student student){
+        students.put(student.getId(), student);
+    }
     public void delete(int id){
         students.remove(id);
     }
 
-    public void update(Student course){
-        students.put(course.getId(), course);
-    }
+
 }

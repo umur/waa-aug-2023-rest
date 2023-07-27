@@ -5,9 +5,10 @@ import miu.waa.lab2.dto.StudentDto;
 import java.util.Map;
 
 public interface StudentService {
-    StudentDto get(int id);
-    void save(StudentDto course);
     Map<Integer, StudentDto> getAll();
-    void delete(int id);
+    void create(StudentDto course);
+    StudentDto read(int id);
     void update(StudentDto course);
+    void delete(int id);
+
 }

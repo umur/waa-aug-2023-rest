@@ -1,0 +1,38 @@
+body {
+  background-color: cornsilk;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.container {
+  display: flex;
+}
+
+.left-section {
+  flex: 2;
+  background-color: lightblue;
+  padding: 20px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.right-section {
+  flex: 1;
+  background-color: lightblue;
+  padding: 20px;
+}

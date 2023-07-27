@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+//@Service
 public interface CourseService {
     List<CourseDto> getCourse();
     void addCourse(CourseDto dto);

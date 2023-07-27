@@ -1,26 +1,31 @@
-package com.example.demo.service;
+package com.example.demo.service.impl;
 
 import com.example.demo.dto.CourseDto;
 import com.example.demo.dto.StudentDto;
 import com.example.demo.entity.Course;
 import com.example.demo.entity.Student;
 import com.example.demo.repository.StudentRepo;
+import com.example.demo.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
 import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class StudentServiceImpl implements StudentService{
+public class StudentServiceImpl implements StudentService {
     @Autowired
     private final StudentRepo studentRepo;
     @Override
-    public void save(StudentDto student) {
-        studentRepo.save(convertToEntity(student));
+    public void save(StudentDto studentDto) {
+        if (!Util.isValidEmail(studentDto.getEmail())) {
+            throw new RuntimeException("Invalid email address.");
+        }
+        studentRepo.save(convertToEntity(studentDto));
     }
 
     @Override
@@ -42,6 +47,10 @@ public class StudentServiceImpl implements StudentService{
 
     @Override
     public void update(StudentDto studentDto, int id) {
+
+        if (!Util.isValidEmail(studentDto.getEmail())) {
+            throw new RuntimeException("Invalid email address.");
+        }
         studentRepo.update(convertToEntity(studentDto), id);
     }
 
@@ -130,4 +139,5 @@ public class StudentServiceImpl implements StudentService{
         }).collect(Collectors.toList());
         return courseTaken;
     }
+
 }

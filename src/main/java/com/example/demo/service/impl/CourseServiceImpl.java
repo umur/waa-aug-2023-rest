@@ -1,10 +1,9 @@
-package com.example.demo.service;
+package com.example.demo.service.impl;
 
 import com.example.demo.dto.CourseDto;
-import com.example.demo.dto.StudentDto;
 import com.example.demo.entity.Course;
-import com.example.demo.entity.Student;
 import com.example.demo.repository.CourseRepo;
+import com.example.demo.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 @Service
 @RequiredArgsConstructor
-public class CourseServiceImpl implements CourseService{
+public class CourseServiceImpl implements CourseService {
 
     @Autowired
     private final CourseRepo courseRepo;

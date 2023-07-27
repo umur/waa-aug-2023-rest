@@ -1,0 +1,10 @@
+{
+	"info": {
+		"_postman_id": "bd12ad22-634a-47f9-975e-f91467061c8d",
+		"name": "PostmanCollection",
+		"description": "```\n[\n{\n    \"id\": 1,\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"john@example.com\",\n    \"major\": \"Computer Science\",\n    \"coursesTaken\": [\n        {\n            \"id\": 1,\n            \"name\": \"Mathematics\",\n            \"code\": \"MATH101\"\n        }\n    ]\n},\n    {\n    \"id\": 2,\n    \"firstName\": \"Sam\",\n    \"lastName\": \"Ans\",\n    \"email\": \"john@example.com\",\n    \"major\": \"Physics\",\n    \"coursesTaken\": [\n        {\n            \"id\": 1,\n            \"name\": \"Physics\",\n            \"code\": \"Phy102\"\n        }\n    ]\n}\n]\n\n ```",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28787216"
+	},
+	"item": []
+}

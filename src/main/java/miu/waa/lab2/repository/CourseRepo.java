@@ -3,6 +3,7 @@ package miu.waa.lab2.repository;
 import miu.waa.lab2.entity.Course;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,8 +30,4 @@ public class CourseRepo {
     public void delete(int id){
         courses.remove(id);
     }
-
-
-
-
 }

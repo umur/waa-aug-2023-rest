@@ -3,6 +3,8 @@ package miu.waa.lab2.entity;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+
 @Getter
 @Setter
 public class Student {
@@ -11,5 +13,5 @@ public class Student {
     private String lastName;
     private String email;
     private String major;
-    private Course[] coursesTaken;
+    private ArrayList<Course> coursesTaken;
 }

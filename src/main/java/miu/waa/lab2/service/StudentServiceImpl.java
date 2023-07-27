@@ -3,10 +3,12 @@ package miu.waa.lab2.service;
 import lombok.RequiredArgsConstructor;
 import miu.waa.lab2.dto.CourseDto;
 import miu.waa.lab2.dto.StudentDto;
+import miu.waa.lab2.entity.Course;
 import miu.waa.lab2.entity.Student;
 import miu.waa.lab2.repository.StudentRepo;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -72,5 +74,41 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void delete(int id) {
         studentRepo.delete(id);
+    }
+
+    @Override
+    public ArrayList<StudentDto> getStudentsByMajor(String major){
+        ArrayList<StudentDto> studentsDto= new ArrayList<>();
+        ArrayList<Student> students = studentRepo.getStudentsByMajor(major);
+        students.forEach(s->{
+            System.out.println(s.getId());
+        });
+        students.forEach(s->{
+            StudentDto student = new StudentDto();
+            student.setId(s.getId());
+            student.setFirstName(s.getFirstName());
+            student.setLastName(s.getLastName());
+            student.setEmail(s.getEmail());
+            student.setMajor(s.getMajor());
+            student.setCoursesTaken(s.getCoursesTaken());
+            studentsDto.add(student);
+        });
+        return studentsDto;
+    }
+
+    @Override
+    public ArrayList<CourseDto> getCoursesByStudentId(int id){
+        ArrayList<Course> courses = studentRepo.getCoursesByStudentId(id);
+        ArrayList<CourseDto> result = new ArrayList<>();
+        if(courses!=null){
+            courses.forEach(c-> {
+                CourseDto dto = new CourseDto();
+                dto.setId(c.getId());
+                dto.setName(c.getName());
+                dto.setCode(c.getCode());
+                result.add(dto);
+            });
+        }
+        return result;
     }
 }

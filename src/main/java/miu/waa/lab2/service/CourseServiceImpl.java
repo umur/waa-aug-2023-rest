@@ -6,6 +6,7 @@ import miu.waa.lab2.entity.Course;
 import miu.waa.lab2.repository.CourseRepo;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 @RequiredArgsConstructor
@@ -59,6 +60,4 @@ public class CourseServiceImpl implements CourseService {
     public void delete(int id) {
         courseRepo.delete(id);
     }
-
-
 }

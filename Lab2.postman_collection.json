@@ -124,6 +124,48 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "http://localhost:8080/students/getStudentsByMajor/cs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/students/getStudentsByMajor/cs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students",
+								"getStudentsByMajor",
+								"cs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/students/getCoursesByStudentId/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/students/getCoursesByStudentId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students",
+								"getCoursesByStudentId",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},

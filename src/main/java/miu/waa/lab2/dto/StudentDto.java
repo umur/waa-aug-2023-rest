@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import miu.waa.lab2.entity.Course;
 
+import java.util.ArrayList;
+
 @Getter
 @Setter
 public class StudentDto {
@@ -12,5 +14,5 @@ public class StudentDto {
     private String lastName;
     private String email;
     private String major;
-    private Course[] coursesTaken;
+    private ArrayList<Course> coursesTaken;
 }

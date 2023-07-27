@@ -1,7 +1,9 @@
 package miu.waa.lab2.service;
 
+import miu.waa.lab2.dto.CourseDto;
 import miu.waa.lab2.dto.StudentDto;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public interface StudentService {
@@ -11,4 +13,7 @@ public interface StudentService {
     void update(StudentDto course);
     void delete(int id);
 
+    ArrayList<StudentDto> getStudentsByMajor(String major);
+
+    ArrayList<CourseDto> getCoursesByStudentId(int id);
 }

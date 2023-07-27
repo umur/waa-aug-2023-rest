@@ -1,10 +1,12 @@
 package miu.waa.lab2.controller;
 
 import lombok.RequiredArgsConstructor;
+import miu.waa.lab2.dto.CourseDto;
 import miu.waa.lab2.dto.StudentDto;
 import miu.waa.lab2.service.StudentService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 @RestController
@@ -36,5 +38,15 @@ public class StudentController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable int id){
         studentService.delete(id);
+    }
+
+    @GetMapping("/getStudentsByMajor/{major}")
+    public ArrayList<StudentDto> getStudentsByMajor(@PathVariable String major){
+        return studentService.getStudentsByMajor(major);
+    }
+
+    @GetMapping("/getCoursesByStudentId/{id}")
+    public ArrayList<CourseDto> getCoursesByStudentId(@PathVariable int id){
+        return studentService.getCoursesByStudentId(id);
     }
 }

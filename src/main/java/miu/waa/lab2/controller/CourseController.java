@@ -5,6 +5,7 @@ import miu.waa.lab2.dto.CourseDto;
 import miu.waa.lab2.service.CourseService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 @RestController
@@ -37,6 +38,5 @@ public class CourseController {
     public void delete(@PathVariable int id){
         courseService.delete(id);
     }
-
 
 }

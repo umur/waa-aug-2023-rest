@@ -18,11 +18,9 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
-
-
     @GetMapping
     public ResponseEntity<CustomResponse<List<CourseDto>>> getAllCourse() {
-        List<CourseDto> courses = courseService.getCourse();
+        List<CourseDto> courses = courseService.getCourses();
         if (courses.isEmpty()) {
             CustomResponse<List<CourseDto>> response = new CustomResponse<>("204","No Content" ,null);
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body(response);
@@ -35,19 +33,19 @@ public class CourseController {
     @PostMapping
     public List<CourseDto> addCourse(@RequestBody CourseDto dto) {
         courseService.addCourse(dto);
-        return courseService.getCourse();
+        return courseService.getCourses();
     }
 
     @DeleteMapping("/{id}")
     public List<CourseDto> removeCourse(@PathVariable String id) {
         courseService.removeCourse(id);
-        return courseService.getCourse();
+        return courseService.getCourses();
     }
 
     @PutMapping("/{id}")
     @ResponseBody
     public List<CourseDto> updateCourse(@PathVariable String id,@RequestBody CourseDto dto) {
         courseService.updateCourse(id,dto);
-        return courseService.getCourse();
+        return courseService.getCourses();
     }
 }

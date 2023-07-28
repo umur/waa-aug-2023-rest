@@ -1,9 +1,13 @@
 package com.homework.rest;
 
 import com.homework.rest.Entity.Course;
+import com.homework.rest.Entity.Student;
 import com.homework.rest.Repository.CourseRepository;
+import com.homework.rest.Repository.StudentRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.util.ArrayList;
 
 @SpringBootApplication
 public class RestApplication {
@@ -16,6 +20,11 @@ public class RestApplication {
         courseRepository.addCourse(course);
         courseRepository.addCourse(course1);
         courseRepository.addCourse(course3);
+
+        String[] courseTaken = {"CS244", "CS234", "CS235"};
+        Student student = new Student("123","John","Doe","john.doe@example.com","Computer Science",courseTaken);
+        StudentRepository studentRepository = new StudentRepository();
+        studentRepository.addStudent(student);
 
         SpringApplication.run(RestApplication.class, args);
     }

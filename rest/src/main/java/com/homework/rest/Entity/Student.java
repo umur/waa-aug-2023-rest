@@ -11,6 +11,14 @@ public class Student {
     private String major;
     private String[] courseTaken;
 
+    public Student(String id, String firstName, String lastName, String email, String[] courseTaken) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.courseTaken = courseTaken;
+    }
+
     public String getId() {
         return id;
     }
@@ -67,6 +75,8 @@ public class Student {
         this.major = major;
         this.courseTaken = courseTaken;
     }
+
+    public Student() {}
 
     @Override
     public String toString() {

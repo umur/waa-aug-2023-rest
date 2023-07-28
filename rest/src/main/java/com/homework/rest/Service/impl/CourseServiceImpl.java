@@ -1,6 +1,7 @@
 package com.homework.rest.Service.impl;
 
 import com.homework.rest.Dto.CourseDto;
+import com.homework.rest.Dto.StudentDto;
 import com.homework.rest.Entity.Course;
 import com.homework.rest.Repository.CourseRepository;
 import com.homework.rest.Service.CourseService;
@@ -26,7 +27,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<CourseDto> getCourse() {
+    public List<CourseDto> getCourses() {
         List<Course> entityList = courseRepository.getCourses();
         List<CourseDto> dtoList = new ArrayList<>();
         entityList.forEach(entity -> {
@@ -45,7 +46,6 @@ public class CourseServiceImpl implements CourseService {
         entity.setId(dto.getId());
         entity.setName(dto.getName());
         entity.setCode(dto.getCode());
-        System.out.println(dto);
         courseRepository.updateCourse(id,entity);
     }
 

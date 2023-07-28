@@ -22,10 +22,10 @@ public class CourseRepo {
         }
         return null;
     }
-    public void updateCourse(Course updatedCourse) {
+    public void updateCourse(Course updatedCourse, int courseId) {
         for (int i = 0; i < courses.size(); i++) {
             Course course = courses.get(i);
-            if (course.getId() == updatedCourse.getId()) {
+            if (course.getId() == courseId) {
                 courses.set(i, updatedCourse);
                 break;
             }

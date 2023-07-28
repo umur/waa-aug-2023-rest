@@ -31,10 +31,11 @@ public class StudentRepo {
     }
 
     // Update an existing student
-    public void updateStudent(Student updatedStudent) {
+
+    public void updateStudent(Student updatedStudent, int id) {
         for (int i = 0; i < students.size(); i++) {
             Student student = students.get(i);
-            if (student.getId() == updatedStudent.getId()) {
+            if (student.getId() == id) {
                 students.set(i, updatedStudent);
                 break;
             }

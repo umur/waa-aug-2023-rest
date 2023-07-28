@@ -4,6 +4,7 @@ import com.homework.rest.Entity.Course;
 import com.homework.rest.Entity.Student;
 import com.homework.rest.Repository.CourseRepository;
 import com.homework.rest.Repository.StudentRepository;
+import com.homework.rest.config.CorsConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -25,6 +26,9 @@ public class RestApplication {
         Student student = new Student("123","John","Doe","john.doe@example.com","Computer Science",courseTaken);
         StudentRepository studentRepository = new StudentRepository();
         studentRepository.addStudent(student);
+
+        CorsConfig cors = new CorsConfig();
+        cors.getCorsConfiguration();
 
         SpringApplication.run(RestApplication.class, args);
     }

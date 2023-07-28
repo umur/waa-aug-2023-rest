@@ -43,4 +43,10 @@ public class StudentController {
     public List<CoursesStudentDto> getCoursesByStudentId(@PathVariable String id) {
         return studentService.getCoursesByStudentId(id);
     }
+
+    @PutMapping("/{id}")
+    public List<StudentDto> updateStudent(@PathVariable String id,@RequestBody StudentDto dto) {
+        studentService.updateStudent(id,dto);
+        return studentService.getStudents();
+    }
 }

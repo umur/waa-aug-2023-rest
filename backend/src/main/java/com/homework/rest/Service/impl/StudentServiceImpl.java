@@ -82,4 +82,15 @@ public class StudentServiceImpl implements StudentService {
         });
         return dtoList;
     }
+
+    public void updateStudent(String id,StudentDto studentDto) {
+        var entity = new Student();
+        entity.setId(studentDto.getId());
+        entity.setFirstName(studentDto.getFirstName());
+        entity.setLastName(studentDto.getLastName());
+        entity.setMajor(studentDto.getMajor());
+        entity.setEmail(studentDto.getEmail());
+        entity.setCourseTaken(studentDto.getCourseTaken());
+        studentRepository.updateStudent(id,entity);
+    }
 }

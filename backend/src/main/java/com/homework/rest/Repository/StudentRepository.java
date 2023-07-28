@@ -21,14 +21,26 @@ public class StudentRepository {
     }
 
     public void removeStudent(String id) {
-        System.out.println("here"+id);
         Iterator<Student> iterator = students.iterator();
         while (iterator.hasNext()) {
             Student student = iterator.next();
-            System.out.println(student);
-            System.out.println(id.equals(student.getId()));
             if(id.equals(student.getId())) {
                 iterator.remove();
+            }
+        }
+    }
+
+    public void updateStudent(String id, Student updateStudent) {
+        Iterator<Student> iterator = students.iterator();
+        while (iterator.hasNext()) {
+            Student student = iterator.next();
+            if(id.equals(student.getId())) {
+                student.setId(updateStudent.getId());
+                student.setFirstName(updateStudent.getFirstName());
+                student.setLastName(updateStudent.getLastName());
+                student.setMajor(updateStudent.getMajor());
+                student.setEmail(updateStudent.getEmail());
+                student.setCourseTaken(updateStudent.getCourseTaken());
             }
         }
     }

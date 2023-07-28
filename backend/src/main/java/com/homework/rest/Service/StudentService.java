@@ -11,4 +11,5 @@ public interface StudentService {
     public void removeStudent(String id);
     public List<StudentDto> getStudentsByMajor(String major);
     public List<CoursesStudentDto> getCoursesByStudentId(String studentId);
+    public void updateStudent(String id,StudentDto studentDto);
 }

@@ -1,0 +1,36 @@
+#tablist-container {
+    width: 60%;
+    padding: 5px;
+    margin: 50px auto auto auto;
+}
+
+#label-student {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+#table-head {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+#delete-data {
+    width: 1fr;
+}
+
+#load-table {
+    width: 15%;
+    margin-left: -4%;
+}
+
+#label-student {
+    margin-left: -78%
+}
+
+#new-table {
+    width: 15%;
+    margin-left: 88%
+}
